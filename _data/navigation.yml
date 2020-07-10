@@ -1,6 +1,21 @@
 # Site navigation links
 
-- title:
-  url:
-  excerpt:
+- title: Works
+  url: /works/
+  excerpt: "Things I've designed, illustrated, developed, coded, and whatever."
+  image:
+
+- title: Notes
+  url: /notes/
+  excerpt: "Notes of everything else."
+  image:
+
+- title: Articles
+  url: /articles/
+  excerpt: "Write down what't I've learned."
+  image:
+
+- title: About
+  url: /about/
+  excerpt: "About Me"
   image:

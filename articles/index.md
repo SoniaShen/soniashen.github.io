@@ -1,11 +1,10 @@
 ---
 layout: archive
-permalink: /
-title: "Recent Posts"
+title: "Articles"
 ---
 
 <div class="tiles">
-{% for post in site.posts %}
+{% for post in site.categories.articles %}
 	{% include post-grid.html %}
 {% endfor %}
 </div><!-- /.tiles -->
