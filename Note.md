@@ -44,6 +44,7 @@ bundle exec jekyll serve
 ## [1] https://github.com/jekyll/jekyll/issues/920
 ## [2] https://jekyllrb.com/docs/structure/
 ## [3] https://mmistakes.github.io/jekyll-theme-skinny-bones/getting-started/#adding-new-content
+## [4] https://jekyllrb.com/docs/posts/
 
 
 my=jekyll-site

@@ -1,1 +1,176 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-07-10T13:27:13+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">MINE TECH BLOG</title><subtitle>This is the beginning of everything to start!</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-09-03T15:56:24+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">MINE TECH BLOG</title><subtitle>This is the beginning of everything to start!</subtitle><entry><title type="html">Git Ignore</title><link href="http://localhost:4000/git-ignore/" rel="alternate" type="text/html" title="Git Ignore" /><published>2020-09-03T00:00:00+08:00</published><updated>2020-09-03T00:00:00+08:00</updated><id>http://localhost:4000/git-ignore</id><content type="html" xml:base="http://localhost:4000/git-ignore/">&lt;p&gt;Ignoring directories in Git repositories:
+web link: https://stackoverflow.com/questions/343646/ignoring-directories-in-git-repositories-on-windows#:~:text=If%20you%20want%20to%20maintain%20a%20folder%20and,included%20in%20your%20repository.%20%24%20git%20add%20path%2Fto%2Ffolder%2F.gitignore&lt;/p&gt;
+
+&lt;p&gt;i.e.
+If you want to maintain a folder and not the files inside it, just put a “.gitignore” file in the folder with “*” as the content.
+—
+But .gitignore will be included in your repository.
+$ git add path/to/folder/.gitignore
+—
+If you add an empty folder, you receive this message (.gitignore is a hidden file)
+—
+The following paths are ignored by one of your .gitignore files:
+path/to/folder/.gitignore
+—
+Use -f if you really want to add them.
+fatal: no files added
+—
+So, use “-f” to force add:
+$ git add path/to/folder/.gitignore -f&lt;/p&gt;
+
+&lt;p&gt;=====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;$ cat ./nsds/inuksuk-model/.gitignore
+.intermediate/
+/Output_Models/&lt;/p&gt;
+
+&lt;p&gt;$ cat ./nsds/ft4p-nsds/.gitignore
+**/ft4p.properties
+**/ft4p.xml&lt;/p&gt;
+
+&lt;p&gt;$ cat ./nsds/inuksuk-cba-esm-installer/.gitignore
+vwcg-nsds-esm-config/src/main/resources/esm/ova-build-files/pxeboot.qcow2
+vwcg-nsds-esm-config/src/main/resources/esm/packages&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;$ cat ./.gitignore&lt;/p&gt;
+&lt;h1 id=&quot;common-editor-swap-files&quot;&gt;Common editor swap-files&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;.bak
+cp_nsds.txt
+Keystore_dir/
+*.swo
+*.swp
+*~
+.#&lt;/em&gt;
+#*#
+*.jar
+.TITAN_properties&lt;/p&gt;
+
+&lt;h1 id=&quot;project-files&quot;&gt;Project files&lt;/h1&gt;
+&lt;p&gt;*.iml
+.cdtproject
+.classpath
+.idea
+.idea/
+.project
+.pydevproject
+.settings/&lt;/p&gt;
+
+&lt;h1 id=&quot;everything-in-tmp-directory-and-below&quot;&gt;Everything in tmp directory and below&lt;/h1&gt;
+&lt;p&gt;tmp/&lt;/p&gt;
+
+&lt;h1 id=&quot;t3lib-temp-file&quot;&gt;t3Lib temp file&lt;/h1&gt;
+&lt;p&gt;testcase_data.tmp&lt;/p&gt;
+
+&lt;h1 id=&quot;eclipse-default-compilation-directories&quot;&gt;eclipse default compilation directories&lt;/h1&gt;
+&lt;h1 id=&quot;exclude-certain-source-directories&quot;&gt;exclude certain source directories&lt;/h1&gt;
+&lt;p&gt;bin/
+!mmas/bin
+!dev/bin
+!health/bin&lt;/p&gt;
+
+&lt;h1 id=&quot;maven-target-folder&quot;&gt;Maven target folder&lt;/h1&gt;
+&lt;p&gt;target/
+applications/&lt;/p&gt;
+
+&lt;h1 id=&quot;binary-directories&quot;&gt;binary directories&lt;/h1&gt;
+&lt;p&gt;!/h2s-cba-healthcheck/src/main/scripts/home/health/bin/
+!/h2s-sdp/SDPFiles/DeployFiles/jbcp6/traffic/mmas/bin/
+!/inuksuk-bumper-sdp/SDPFiles/DeployFiles/jbcp6/traffic/mmas/bin/
+!/inuksuk-cba-healthcheck/src/main/scripts/home/health/bin/
+!/inuksuk-sdp/SDPFiles/DeployFiles/jbcp6/traffic/mmas/bin/
+bin-*&lt;/p&gt;
+
+&lt;h1 id=&quot;wireshark-file&quot;&gt;Wireshark file&lt;/h1&gt;
+&lt;p&gt;*.pcap&lt;/p&gt;
+
+&lt;h1 id=&quot;downloaded-rpm&quot;&gt;downloaded rpm&lt;/h1&gt;
+&lt;p&gt;sshd_config_sftp_filem-1.0-2.x86_64.rpm&lt;/p&gt;
+
+&lt;h1 id=&quot;ctags-file&quot;&gt;ctags file&lt;/h1&gt;
+&lt;p&gt;.tags&lt;/p&gt;
+
+&lt;h1 id=&quot;sshfs-fuse-files&quot;&gt;sshfs fuse files&lt;/h1&gt;
+&lt;p&gt;.fuse*&lt;/p&gt;
+
+&lt;h1 id=&quot;tg-result-files&quot;&gt;TG result files&lt;/h1&gt;
+&lt;p&gt;*.csv&lt;/p&gt;
+
+&lt;h1 id=&quot;kate-editor-temp-files&quot;&gt;Kate editor temp files&lt;/h1&gt;
+&lt;p&gt;*.kate-swp
+ —– —– —–&lt;/p&gt;
+
+&lt;p&gt;=====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt;
+Learn Git -&amp;gt; .gitignore    [suggested web site: atlassian Bitbucket]
+web link: https://www.atlassian.com/git/tutorials/saving-changes/gitignore#:~:text=ignored%20-%20a%20file%20which%20Git%20has%20been,caches%2C%20such%20as%20the%20contents%20of%20%2Fnode_modulesor%20%2Fpackages&lt;/p&gt;
+
+&lt;p&gt;i.e.
+git add / git commit / git diff / git stash / .gitignore&lt;/p&gt;</content><author><name></name></author><summary type="html">Ignoring directories in Git repositories: web link: https://stackoverflow.com/questions/343646/ignoring-directories-in-git-repositories-on-windows#:~:text=If%20you%20want%20to%20maintain%20a%20folder%20and,included%20in%20your%20repository.%20%24%20git%20add%20path%2Fto%2Ffolder%2F.gitignore</summary></entry><entry><title type="html">Java Applicationscoped</title><link href="http://localhost:4000/java-ApplicationScoped/" rel="alternate" type="text/html" title="Java Applicationscoped" /><published>2020-09-03T00:00:00+08:00</published><updated>2020-09-03T00:00:00+08:00</updated><id>http://localhost:4000/java-ApplicationScoped</id><content type="html" xml:base="http://localhost:4000/java-ApplicationScoped/">&lt;p&gt;Differences : @SessionScoped vs @Stateful and @ApplicationScoped vs @Singleton [closed]:
+web link: https://stackoverflow.com/questions/24105807/differences-sessionscoped-vs-stateful-and-applicationscoped-vs-singleton#:~:text=%40ApplicationScoped%20is%20just%20a%20scope%2C%20while%20%40Singleton%20is,%40Lock%29%20and%20with%20eager%20construction%20behavior%20%28via%20%40Startup%29.&lt;/p&gt;
+
+&lt;p&gt;i.e. 
+@SessionScoped denotes a scope while @Stateful is in a way what we would now call a stereotype. @Stateful adds a number a services to a bean, among which transactional behavior and passivation.
+Central to @Stateful is however its session behavior, which indeed overlaps with the session scope.
+The difference is that the session scope is tied to the HTTP session, while @Stateful is an open-ended user managed session, with its lifetime managed by a client that has a reference to the bean proxy.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;There’s a somewhat similar story for @ApplicationScoped and @Singleton, although without the legacy (@Singleton is a fairly new thing). 
+@ApplicationScoped is just a scope, while @Singleton is a bean type (stereotype if you wish), which doesn’t only give you application scoped behavior, but also provides you with transactional behavior again, with automatic locking (which can be tuned via @Lock) and with eager construction behavior (via @Startup).&lt;/p&gt;
+
+&lt;p&gt;=====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Differences : @SessionScoped vs @Stateful and @ApplicationScoped vs @Singleton [closed]: web link: https://stackoverflow.com/questions/24105807/differences-sessionscoped-vs-stateful-and-applicationscoped-vs-singleton#:~:text=%40ApplicationScoped%20is%20just%20a%20scope%2C%20while%20%40Singleton%20is,%40Lock%29%20and%20with%20eager%20construction%20behavior%20%28via%20%40Startup%29.</summary></entry><entry><title type="html">Java Equal</title><link href="http://localhost:4000/java-equal/" rel="alternate" type="text/html" title="Java Equal" /><published>2020-09-02T00:00:00+08:00</published><updated>2020-09-02T00:00:00+08:00</updated><id>http://localhost:4000/java-equal</id><content type="html" xml:base="http://localhost:4000/java-equal/">&lt;p&gt;xxx.equals(null)和xxx == null 的区别:
+web link: https://bbs.csdn.net/topics/60240282&lt;/p&gt;
+
+&lt;p&gt;i.e. 请自行验证&lt;/p&gt;
+
+&lt;p&gt;—–&amp;gt; —–&amp;gt; —–&amp;gt; —–&amp;gt; —–&amp;gt; —–&amp;gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">xxx.equals(null)和xxx == null 的区别: web link: https://bbs.csdn.net/topics/60240282</summary></entry><entry><title type="html">Java Reflect</title><link href="http://localhost:4000/java-reflect/" rel="alternate" type="text/html" title="Java Reflect" /><published>2020-08-31T00:00:00+08:00</published><updated>2020-08-31T00:00:00+08:00</updated><id>http://localhost:4000/java-reflect</id><content type="html" xml:base="http://localhost:4000/java-reflect/">&lt;p&gt;使用Mockito对类成员变量进行Mock:
+web link: https://blog.csdn.net/fenglibing/article/details/16842655&lt;/p&gt;
+
+&lt;p&gt;i.e. 通过使用反射的方式:
+  Field testAField = oneClass.getClass().getDeclaredField(“testA”);
+	testAField.setAccessible(true);
+	testAField.set(oneClass, testA);&lt;/p&gt;
+
+&lt;p&gt;—–&amp;gt; —–&amp;gt; —–&amp;gt; —–&amp;gt; —–&amp;gt; —–&amp;gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">使用Mockito对类成员变量进行Mock: web link: https://blog.csdn.net/fenglibing/article/details/16842655</summary></entry><entry><title type="html">Mvn Pom Profiles</title><link href="http://localhost:4000/mvn-pom-profiles/" rel="alternate" type="text/html" title="Mvn Pom Profiles" /><published>2020-08-31T00:00:00+08:00</published><updated>2020-08-31T00:00:00+08:00</updated><id>http://localhost:4000/mvn-pom-profiles</id><content type="html" xml:base="http://localhost:4000/mvn-pom-profiles/">&lt;p&gt;Invalid Content Was Found Starting With Element ‘country’. 
+web link: https://stackoverflow.com/questions/17173383/invalid-content-was-found-starting-with-element-country-one-of-country-is&lt;/p&gt;
+
+&lt;p&gt;i.e.
+As written, your schema expects the “global” countries, name and city elements to be in the http://localhost:8080/ajaxprac namespace, but the “local” elements (those declared inside a complexType, i.e. country and cities) to be in no namespace. You probably want to add elementFormDefault=”qualified”&lt;/p&gt;
+
+&lt;p&gt;—–&amp;gt; —–&amp;gt; —–&amp;gt; —–&amp;gt; —–&amp;gt; —–&amp;gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Invalid Content Was Found Starting With Element ‘country’. web link: https://stackoverflow.com/questions/17173383/invalid-content-was-found-starting-with-element-country-one-of-country-is</summary></entry><entry><title type="html">Mvn Repository</title><link href="http://localhost:4000/mvn-repository/" rel="alternate" type="text/html" title="Mvn Repository" /><published>2020-08-31T00:00:00+08:00</published><updated>2020-08-31T00:00:00+08:00</updated><id>http://localhost:4000/mvn-repository</id><content type="html" xml:base="http://localhost:4000/mvn-repository/">&lt;p&gt;MVN REPOSITORY:
+web link: https://mvnrepository.com/&lt;/p&gt;</content><author><name></name></author><summary type="html">MVN REPOSITORY: web link: https://mvnrepository.com/</summary></entry><entry><title type="html">Ec Private Key</title><link href="http://localhost:4000/ec-private-key/" rel="alternate" type="text/html" title="Ec Private Key" /><published>2020-08-21T00:00:00+08:00</published><updated>2020-08-21T00:00:00+08:00</updated><id>http://localhost:4000/ec-private-key</id><content type="html" xml:base="http://localhost:4000/ec-private-key/">&lt;p&gt;EC private key, RSA certificate. Is this realisable?
+web link: https://security.stackexchange.com/questions/92884/ec-private-key-rsa-certificate-is-this-realisable&lt;/p&gt;</content><author><name></name></author><summary type="html">EC private key, RSA certificate. Is this realisable? web link: https://security.stackexchange.com/questions/92884/ec-private-key-rsa-certificate-is-this-realisable</summary></entry><entry><title type="html">Java Junit</title><link href="http://localhost:4000/java-Junit/" rel="alternate" type="text/html" title="Java Junit" /><published>2020-08-21T00:00:00+08:00</published><updated>2020-08-21T00:00:00+08:00</updated><id>http://localhost:4000/java-Junit</id><content type="html" xml:base="http://localhost:4000/java-Junit/">&lt;p&gt;Junit: Ignore or skip entire test class:
+web link: https://stackoverflow.com/questions/26115139/junit-ignore-or-skip-entire-test-class&lt;/p&gt;
+
+&lt;p&gt;JUnit - Ignore Test:
+web link: https://www.tutorialspoint.com/junit/junit_ignore_test.htm    [website suggested]&lt;/p&gt;
+
+&lt;p&gt;JUnit @Ignore Test Annotation with Example:
+web link: https://www.guru99.com/junit-ignore-test.html    [website suggested]&lt;/p&gt;
+
+&lt;p&gt;=====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt; =====&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Unit test Java class that loads native library:
+web link: https://stackoverflow.com/questions/34802667/unit-test-java-class-that-loads-native-library/46439968#46439968&lt;/p&gt;</content><author><name></name></author><summary type="html">Junit: Ignore or skip entire test class: web link: https://stackoverflow.com/questions/26115139/junit-ignore-or-skip-entire-test-class</summary></entry><entry><title type="html">Java Noclassdeffounderror</title><link href="http://localhost:4000/java-NoClassDefFoundError/" rel="alternate" type="text/html" title="Java Noclassdeffounderror" /><published>2020-08-21T00:00:00+08:00</published><updated>2020-08-21T00:00:00+08:00</updated><id>http://localhost:4000/java-NoClassDefFoundError</id><content type="html" xml:base="http://localhost:4000/java-NoClassDefFoundError/">&lt;p&gt;Why am I getting a NoClassDefFoundError in Java?
+web link: https://stackoverflow.com/questions/34413/why-am-i-getting-a-noclassdeffounderror-in-java&lt;/p&gt;
+
+&lt;p&gt;web link: https://docs.oracle.com/javase/7/docs/api/java/lang/NoClassDefFoundError.html&lt;/p&gt;
+
+&lt;p&gt;NoClassDefFoundError after loadlibrary:
+web link: https://stackoverflow.com/questions/14400894/noclassdeffounderror-after-loadlibrary&lt;/p&gt;
+
+&lt;p&gt;How to Resolve java.lang.NoClassDefFoundError: How to resolve – Part 2:    [suggested]
+web link: https://dzone.com/articles/how-resolve-0&lt;/p&gt;
+
+&lt;p&gt;“java.lang.NoClassDefFoundError” : A JNI error has occurred
+web link: https://sqa.stackexchange.com/questions/23084/java-lang-noclassdeffounderror-a-jni-error-has-occurred&lt;/p&gt;
+
+&lt;p&gt;i.e. Understand - Cause why this occur:
+[1] Any of your file is present at the compile time but its not reachable at the execution time
+[2] You need to crosscheck both compile time and run time environment &amp;amp; class paths&lt;/p&gt;</content><author><name></name></author><summary type="html">Why am I getting a NoClassDefFoundError in Java? web link: https://stackoverflow.com/questions/34413/why-am-i-getting-a-noclassdeffounderror-in-java</summary></entry><entry><title type="html">Java Main</title><link href="http://localhost:4000/java-main/" rel="alternate" type="text/html" title="Java Main" /><published>2020-08-21T00:00:00+08:00</published><updated>2020-08-21T00:00:00+08:00</updated><id>http://localhost:4000/java-main</id><content type="html" xml:base="http://localhost:4000/java-main/">&lt;p&gt;run main class of Maven project [duplicate]
+web link: https://stackoverflow.com/questions/9846046/run-main-class-of-maven-project&lt;/p&gt;
+
+&lt;p&gt;使用Maven运行Java main的3种方式:
+web link: https://blog.csdn.net/qbg19881206/article/details/19850857&lt;/p&gt;
+
+&lt;p&gt;Java之主函数——main函数:
+web link: https://blog.csdn.net/qiaoquan3/article/details/53325915&lt;/p&gt;</content><author><name></name></author><summary type="html">run main class of Maven project [duplicate] web link: https://stackoverflow.com/questions/9846046/run-main-class-of-maven-project</summary></entry></feed>

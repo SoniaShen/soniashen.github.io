@@ -26,6 +26,37 @@ i.e. compares two arrays of Strings:
 boolean equal = Arrays.equals(headings1, headings2);
 
 
+ -----> -----> -----> -----> ----->
+Empty check with String[] array [duplicate]
+web link: https://stackoverflow.com/questions/22162231/empty-check-with-string-array
+
+i.e.
+[1] Normally you would want to do something like:
+--
+if (arr != null && arr.length > 0) { ... }
+for non-empty array.
+
+[2] However, as you may suspect, someone have made utils for such kind of common action. For example, in Commons-lang, you can do something like:
+--
+if (ArrayUtils.isEmpty(arr)) {... }
+
+[3] if you do a static import for ArrayUtils.isEmpty, this line can be even shorter and looks nicer:
+--
+if (isEmpty(arr)) { ... }
+
+
+ -----> -----> -----> -----> ----->
+Java Array of Strings:
+web link: https://www.tutorialkart.com/java/java-array/java-string-array/
+
+i.e. 
+    String names[] = new String[10];
+    String names[] = {"apple", "banana", "cherry", "orange", "mango"};
+
+
+
+
+
 
 
 
