@@ -55,6 +55,62 @@ i.e.
 
 
 
+ =====> =====> =====> =====> =====> =====> 
+How to convert byte array to String in Java:
+web link: https://www.javatpoint.com/how-to-convert-byte-array-to-string-in-java
+i.e.
+String str=new String(bytes);
+
+ -----> -----> -----> -----> ----->
+How to convert FileInputStream into string in java?
+web link: https://stackoverflow.com/questions/15161553/how-to-convert-fileinputstream-into-string-in-java
+i.e.
+import org.apache.commons.io.IOUtils;
+---
+InputStream inStream = new FileInputStream("filename.txt");
+String body = IOUtils.toString(inStream, StandardCharsets.UTF_8.name()); 
+---
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+            <scope>compile</scope>
+        </dependency>
+---
+dependency scope? compile...
+
+
+
+ -----> -----> -----> -----> ----->
+InputStream --> String:
+web link: https://www.cnblogs.com/cpcpc/archive/2011/07/08/2122996.html
+i.e.
+String inputStream2String(InputStream is){
+   BufferedReader in = new BufferedReader(new InputStreamReader(is));
+   StringBuffer buffer = new StringBuffer();
+   String line = "";
+   while ((line = in.readLine()) != null){
+     buffer.append(line);
+   }
+   return buffer.toString();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
