@@ -1,11 +1,11 @@
 ---
 layout: archive
-permalink: /
-title: "All Posts"
+title: "JAVA"
+permalink: /articles/
 ---
 
 <div class="tiles">
-{% for post in site.posts %}
+{% for post in site.categories.java %}
 	{% include post-grid.html %}
 {% endfor %}
 </div><!-- /.tiles -->

@@ -15,6 +15,11 @@
   excerpt: "Write down what't I've learned."
   image:
 
+- title: Tags
+  url: /tags/
+  excerpt: ""
+  image:
+
 - title: About
   url: /about/
   excerpt: "About Me"
